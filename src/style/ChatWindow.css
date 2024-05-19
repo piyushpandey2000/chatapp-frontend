@@ -1,0 +1,6 @@
+.chatwindow-main {
+    margin: 0vh 2vh 2vh 2vh;
+    border: 1px solid white;
+    flex-grow: 1;
+    border-radius: 10px;
+}

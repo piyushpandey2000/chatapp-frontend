@@ -1,13 +1,18 @@
-import '../style/Homepage.css'
+import '../style/Homepage.css';
+import config from '../../config.json';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Homepage = ({ setUsername, setRoomKey }) => {
 
+    const CREATE_ROOM_API_URL = config.SERVER_URL + config.paths.CREATE_ROOM;
+
+    const navigate = useNavigate();
     const [ inputUsername, setInputUsername ] = useState('');
     const [ inputRoomKey, setInputRoomKey ] = useState('');
 
     const handleRoomCreate = (e) => {
-
+        
     }
 
     const handleRoomJoin = (e) => {

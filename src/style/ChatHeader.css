@@ -1,0 +1,45 @@
+.chatheader-main {
+    background-color: #22232a;
+    border-radius: 10px;
+    margin: 2vh;
+    padding: 3vh;
+    max-height: 7vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.chatheader-room-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-grow: 4;
+}
+
+.chatheader-room-info h1 {
+    text-wrap: nowrap;
+    display: inline;
+    text-overflow: ellipsis;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+.chatheader-actions {
+    margin: 1vh;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.chatheader-actions button {
+    background-color: #22232a;
+    border-radius: 0.25rem;
+    flex-grow: 1;
+    aspect-ratio: 1;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+.chatheader-actions svg {
+    flex-grow: 1;
+    aspect-ratio: 1;
+}

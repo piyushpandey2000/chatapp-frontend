@@ -1,3 +1,20 @@
 .chatpage-container {
-    
+    background-color: #343541;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.chatpage-chatview {
+    flex: 0 0 80%;
+    background-color: #343541;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+}
+
+.chatpage-userview {
+    flex: 0 0 20%;
+    background-color: #22232a;
 }
