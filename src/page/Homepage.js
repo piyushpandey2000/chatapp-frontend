@@ -1,6 +1,6 @@
 import '../style/Homepage.css';
-import config from '../../config.json';
-import { useEffect, useState } from 'react';
+import config from '../config.json';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Homepage = ({ setUsername, setRoomKey }) => {
@@ -12,11 +12,38 @@ const Homepage = ({ setUsername, setRoomKey }) => {
     const [ inputRoomKey, setInputRoomKey ] = useState('');
 
     const handleRoomCreate = (e) => {
+        e.preventDefault();
         
+        const createRoom = async () => {
+            try {
+                const response = await fetch(CREATE_ROOM_API_URL,
+                    {
+                        method: 'POST', 
+                        body: JSON.stringify({
+                            'creator': inputUsername
+                        }),
+                        headers: {
+                            'content-type': 'application/json'
+                        }
+                    }
+                );
+                const roomKey = await response.json();
+                setInputRoomKey(roomKey);
+                handleRoomJoin()
+            } catch (e) {
+                console.error(e.stack)
+            }
+        }
+
+        createRoom();
     }
 
     const handleRoomJoin = (e) => {
+        e.preventDefault();
 
+        setRoomKey(inputRoomKey);
+        setUsername(inputUsername);
+        navigate('/chat');
     }
 
     return (
@@ -30,9 +57,9 @@ const Homepage = ({ setUsername, setRoomKey }) => {
                     }}></input>
                     <label>Username</label>
                     <input required type='text' onChange={(e) => setInputUsername(e.target.value)}></input>
-                    <button type='submit' onSubmit={handleRoomCreate}>Create</button>
                     <button type='submit' onSubmit={handleRoomJoin}>Join</button>
                 </form>
+                <button onClick={handleRoomCreate}>Create</button>
             </div>
         </div>
     );

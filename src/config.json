@@ -1,0 +1,9 @@
+{
+    "SERVER_URL": "http://localhost:8080",
+    "paths": {
+        "CREATE_ROOM": "/chatroom/create",
+        "CLOSE_ROOM": "/chatroom/close",
+        "CHATROOM_HEALTH": "/chatroom/health",
+        "WEBSOCKET_PATH": "/webapp_server"
+    }
+}

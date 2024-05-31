@@ -2,7 +2,7 @@ import './App.css';
 import Homepage from './page/Homepage';
 import ChatPage from './page/ChatPage';
 import { Route, Routes } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function App() {
 
@@ -17,8 +17,8 @@ function App() {
           setUsername={setUsername}
         />} />
         <Route path='/chat' element={<ChatPage
-          username={username}
           roomKey={roomKey}
+          username={username}
         />} />
       </Routes>
     </div>
